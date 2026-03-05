@@ -1,9 +1,9 @@
 use_bpm 93
-use_synth :chipbass
+use_synth :tri
 young = "C:/Users/aidan_arrington/Documents/Audacity/Young and Fine.wav"
 like = "C:/Users/aidan_arrington/Downloads/I Like Everything About You.wav"
 smiles = "C:/Users/aidan_arrington/Downloads/Gary Bartz - Gentle Smiles.wav"
-
+note = 21
 young_loops = 0
 
 live_loop :young do
@@ -64,4 +64,23 @@ live_loop :smiles, delay: 32, sync: :sample_start do
   sample smiles, amp: 1
   sleep 8
 end
-
+sleep 64
+live_loop :tri do
+  play :g5
+  sleep 0.25
+  play :f5
+  sleep 0.25
+  play :e5
+  sleep 0.25
+  play :a4
+  sleep 0.25
+  play :g4
+  sleep 0.25
+  play :e5
+  sleep 0.25
+  play :f5
+  sleep 0.25
+  play :c6
+  sleep 0.25
+  stop
+end
