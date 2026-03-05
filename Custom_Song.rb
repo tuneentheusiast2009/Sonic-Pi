@@ -31,7 +31,7 @@ live_loop :young do
 end
 
 live_loop :pocket, delay: 16, sync: :sample_start do
-  stop if young_loops > 6
+  stop if young_loops > 7
   
   sample :bd_haus, amp: 0.2
   sleep 0.5
@@ -50,7 +50,7 @@ live_loop :pocket, delay: 16, sync: :sample_start do
 end
 
 live_loop :hats, delay: 16 do
-  stop if young_loops > 6
+  stop if young_loops > 7
   
   2.times do
     # sample :drum_cymbal_closed, amp: 0.45, rate: 0.9
@@ -59,7 +59,7 @@ live_loop :hats, delay: 16 do
 end
 
 live_loop :smiles, delay: 32, sync: :sample_start do
-  stop if young_loops > 6
+  stop if young_loops > 7
   
   sample smiles, amp: 1
   sleep 8
