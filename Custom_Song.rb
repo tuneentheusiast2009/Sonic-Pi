@@ -31,7 +31,7 @@ live_loop :young do
 end
 
 live_loop :pocket, delay: 16, sync: :sample_start do
-  stop if young_loops > 7
+  stop if young_loops > 6
   
   sample :bd_haus, amp: 0.2
   sleep 0.5
@@ -50,37 +50,27 @@ live_loop :pocket, delay: 16, sync: :sample_start do
 end
 
 live_loop :hats, delay: 16 do
-  stop if young_loops > 7
+  stop if young_loops > 6
   
   2.times do
-    # sample :drum_cymbal_closed, amp: 0.45, rate: 0.9
+    #sample :drum_cymbal_closed, amp: 0.45, rate: 0.9
     sleep 1
   end
 end
 
 live_loop :smiles, delay: 32, sync: :sample_start do
-  stop if young_loops > 7
+  stop if young_loops > 6
   
   sample smiles, amp: 1
   sleep 8
 end
 sleep 64
 live_loop :tri do
-  play :g5
-  sleep 0.25
-  play :f5
-  sleep 0.25
-  play :e5
-  sleep 0.25
-  play :a4
-  sleep 0.25
-  play :g4
-  sleep 0.25
-  play :e5
-  sleep 0.25
-  play :f5
-  sleep 0.25
-  play :c6
-  sleep 0.25
+  notes = [:g5, :f5, :e5, :a4, :g4, :e5, :f5, :c6]
+  n = 0
+  8.times do |n|
+    play notes[n], amp: 0.3
+    sleep 0.25
+  end
   stop
 end
