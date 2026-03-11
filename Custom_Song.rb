@@ -1,7 +1,6 @@
 use_bpm 93
 use_synth :tri
 young = "C:/Users/aidan_arrington/Documents/Audacity/Young and Fine.wav"
-like = "C:/Users/aidan_arrington/Downloads/I Like Everything About You.wav"
 smiles = "C:/Users/aidan_arrington/Downloads/Gary Bartz - Gentle Smiles.wav"
 note = 21
 young_loops = 0
@@ -64,12 +63,14 @@ live_loop :smiles, delay: 32, sync: :sample_start do
   sample smiles, amp: 1
   sleep 8
 end
+
 sleep 64
 live_loop :tri do
   notes = [:g5, :f5, :e5, :a4, :g4, :e5, :f5, :c6]
   n = 0
-  8.times do |n|
+  8.times do
     play notes[n], amp: 0.3
+    n = n + 1
     sleep 0.25
   end
   stop
