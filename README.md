@@ -27,4 +27,13 @@ Total length is roughly 64–80 beats depending on exact stopping behavior.
    young  = "C:/Users/aidan_arrington/Documents/Audacity/Young and Fine.wav"
    smiles = "C:/Users/aidan_arrington/Downloads/Gary Bartz - Gentle Smiles.wav"
 
-   
+   Techniques Used
+
+cue / sync — all timed elements sync to the :sample_start heartbeat from the :young loop
+beat_stretch: 8 — forces both long samples to fit exactly 8 beats (≈ 8 bars @ 93 BPM)
+Conditional sample playback — different processing (amp, envelope) per loop iteration
+Counter-based arrangement (young_loops) — simple way to create sections without complex logic
+delay: and sync: options on live_loops — precise delayed entrances
+stop conditions — automatic fade-out of layers
+
+
