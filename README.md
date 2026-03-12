@@ -9,9 +9,13 @@ The piece starts gentle and sparse, builds subtle percussion, introduces a brigh
 
 ## Overall Structure & Timeline
 | 0–16 beats | Only "Young and Fine" sample plays (first 3 loops loud + full, 4th with fade-out tail) 
-| 16–32 beats| Basic pocket drum groove starts (haus kick + generic snare)                 
-| 32–48+ beats| "Gentle Smiles" sample enters once, drums continue                           
-| ~64 beats  | Bright triangle-wave arpeggio melody plays once (8 quick notes)             
+
+| 16–32 beats| Basic pocket drum groove starts (haus kick + generic snare)        
+
+| 32–48+ beats| "Gentle Smiles" sample enters once, drums continue        
+
+| ~64 beats  | Bright triangle-wave arpeggio melody plays once (8 quick notes)        
+
 | after ~6–8 loops of Young | most elements stop, final quiet "Young" plays with slow attack              
 
 Total length is roughly 64–80 beats depending on exact stopping behavior.
