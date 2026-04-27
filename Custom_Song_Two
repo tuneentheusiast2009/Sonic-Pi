@@ -1,0 +1,61 @@
+use_bpm 82
+intro = "C:/Users/aidan_arrington/Downloads/Love Jones Part 1 - Exhausting the possibilities.wav"
+faiyaz = "C:/Users/aidan_arrington/Documents/Audacity/Brent Faiyaz - if. (spring in new york).wav"
+
+brent_loops = 0
+start_loop = 3
+
+hold = [2, 2, 2, 2, 2, 2, 1.5, 1.5, 1.5]
+wait = [1.5, 2.5, 1.5, 1.8, 1.841, 2.761, 0.8, 0.8, 0.8]
+
+
+define :boom_pattern do
+  hold.length.times do |i|
+    sample :bd_boom, amp: 0.7, sustain: hold[i]
+    sleep wait[i]
+  end
+end
+
+define :play_vocal do |amp_val, attack_val = 0, release_val = 1|
+  sample faiyaz, amp: amp_val, attack: attack_val, release: release_val, beat_stretch: 19
+  sleep 19
+end
+
+sample intro, amp: 6
+sleep 19
+
+live_loop :beat do
+  cue :sample_start
+  
+  brent_loops += 1
+  set :brent_loops, brent_loops
+  
+  stop if brent_loops > 8
+  
+  if brent_loops <= 3
+    play_vocal(1.5)
+    
+  elsif brent_loops == 4
+    play_vocal(1.5, 0, 4)
+    
+  elsif brent_loops <= 7
+    sleep 19
+    
+  else
+    play_vocal(0.5, 2, 0)
+  end
+end
+
+live_loop :booms do
+  sync :sample_start
+  
+  current_loop = get(:brent_loops)
+  
+  if current_loop == 2
+    sleep 19
+    boom_pattern
+    
+  elsif current_loop > 2
+    boom_pattern
+  end
+end
